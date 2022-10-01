@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+function App(){
+
+  const [contador, setContador] = useState(10);
+
+  const aumentar = ()=>
+  {
+    setContador(contador+1);
+  }
+
+  const disminuir  = ()=>
+  {
+    setContador(contador-1);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Contador</h1>
+      <h3>La cuenta es: { contador }</h3>
+      <input 
+      type="button" 
+      value="+" 
+      className="btn btn-primary"
+      onClick={aumentar}
+      />
+      <input 
+      type="button" 
+      value="-" 
+      className="btn btn-primary"
+      onClick={disminuir}
+      />
+      <input 
+      type="button" 
+      value="Reset" 
+      className="btn btn-primary"
+      onClick={()=> setContador(0)}
+      />
+
     </div>
-  );
+  )
 }
 
 export default App;

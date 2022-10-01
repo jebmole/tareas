@@ -1,0 +1,31 @@
+.contenedor-tarea {
+    border: 1px solid black;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding: 15px;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    flex-flow: column;
+}
+
+.formulario-tarea {
+    display: flex;
+    justify-content: center;
+}
+
+.tarea-item {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.listado-tarea {
+    display: flex;
+    flex-flow: column;
+    justify-self: center;
+    justify-items: center;
+    width: 500px;
+}
