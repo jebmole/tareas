@@ -2,10 +2,11 @@ import { useState } from "react";
 
 function TareaForm({ agregarPendiente }) {
 
- const [pendiente, setPendiente] = useState("Aprender React");
+ const [pendiente, setPendiente] = useState("");
 
   const agregarTarea = () => {
     agregarPendiente(pendiente);
+    setPendiente("");
   };
 
   const onChangePendiente = ({ target }) =>{

@@ -5,7 +5,7 @@ import TareaForm from "./TareaForm";
 
 const TareaApp = () => {
 
-  const [tareas, setTareas] = useState(["Tarea 1", "Tarea 2", "Tarea 3"]); 
+  const [tareas, setTareas] = useState([]); 
 
   const agregarPendiente= ( pendiente)=>{
     
@@ -13,16 +13,26 @@ const TareaApp = () => {
     setTareas(pendientes);
   }
 
+  const eliminarTarea = (pendiente)=>{
+    const pendientes = tareas.filter(x=> x !== pendiente);
+    setTareas(pendientes);
+  }
+
   return (
-    <div className="container text-center contenedor-tarea">
-      <h1>MIS TAREAS</h1>
+    <div className="contenedor-tarea">
+      <h1>Mis Tareas</h1>
       <hr />
       <TareaForm agregarPendiente={agregarPendiente} />
       <hr />
       <h3>Listado de tareas</h3>
       <div className="listado-tarea">
         {
-            tareas.map((tarea, index) => <Tarea key={index} descripcion={tarea} />)
+            tareas.map((tarea, index) => 
+                <Tarea key={index} 
+                    descripcion={tarea} 
+                    eliminarTarea={eliminarTarea} 
+                />
+                )
         }
       </div>
     </div>

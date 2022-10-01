@@ -1,8 +1,8 @@
-function Tarea(props){
+function Tarea({ descripcion, eliminarTarea}){
     return (
         <div className="tarea-item">
-            <label>{props.descripcion}</label>
-            <i className="bi bi-trash"></i>
+            <label>{descripcion}</label>
+            <i className="bi bi-trash" onClick={()=> eliminarTarea(descripcion)} ></i>
         </div>
     );
 }
